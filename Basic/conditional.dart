@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   // Conditional Statement is used to check the condition of something and do something if it is true or false
 
