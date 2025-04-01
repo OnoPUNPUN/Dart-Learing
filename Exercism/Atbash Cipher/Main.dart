@@ -1,12 +1,5 @@
-import 'dart:ffi';
-
-void main() {
-  String test = "yes";
-  print(encode(test));
-}
-
-String encode(String text) {
-  Map<String, String> letter = {
+class AtbashCipher {
+  final Map<String, String> letter = {
     "a": "z",
     "b": "y",
     "c": "x",
@@ -35,16 +28,16 @@ String encode(String text) {
     "z": "a",
   };
 
-  String result = "";
-
-  for (int i = 0; i < text.length; i++) {
-    String char = text[i].toLowerCase();
-
-    if (letter.containsKey(char)) {
-      result += letter[char]!;
-    } else {
-      result += char;
-    }
+  String _transform(String text) {
+    return text
+        .split("")
+        .map((char) {
+          String lowerChar = char.toLowerCase();
+          return letter.containsKey(lowerChar) ? letter[lowerChar]! : char;
+        })
+        .join("");
   }
-  return result;
+
+  String encode(String text) => _transform(text);
+  String decode(String text) => _transform(text);
 }
