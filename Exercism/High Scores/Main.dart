@@ -12,7 +12,7 @@ class HighScores {
   // }
 
   int latest() {
-    if (scores == null || scores.isEmpty) {
+    if (scores.isEmpty) {
       return 0;
     }
     return scores.last;
@@ -29,7 +29,7 @@ class HighScores {
   //   return [maxScore];
   // }
   int personalBest() {
-    if (scores == null || scores.isEmpty) {
+    if (scores.isEmpty) {
       return 0;
     }
 
