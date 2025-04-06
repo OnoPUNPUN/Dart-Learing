@@ -34,4 +34,6 @@ class Librarysystem {
       }
     }
   }
+
+  void issueBook(String isbn, Member member) {}
 }
